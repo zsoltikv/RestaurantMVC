@@ -1,4 +1,6 @@
-﻿namespace RestaurantMVC.Models
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
+namespace RestaurantMVC.Models
 // itt egy nevtarteruletet definialunk restaurantmvc.models neven
 // a nevtarterulet logikai kontenerkent szolgál, es ebben taroljuk az alkalmazas modell osztalyait
 // jelen esetben az order osztaly a rendelesekhez kapcsolodo adatokat fogja reprezentalni
@@ -36,7 +38,11 @@
         // ez a rendeles teljes osszeget tarolja, osszesitve minden tetel arat
         // a decimal tipus kivalo penzugyi adatokhoz, mert pontosabb a lebegopontos szamoknal
 
-        public ICollection<OrderItem>? OrderItems { get; set; }
+        public ICollection<OrderItem> OrderItems { get; set; }
+        public Order()
+        {
+            OrderItems = new List<OrderItem>();
+        }
         // az orderitems egy gyujtemeny (icollection), amely orderitem tipusu objektumokat tartalmaz
         // egy rendeleshez tobb tetel is tartozhat, ezert van kollekcioban tarolva
         // a kerdojel miatt a tulajdonsag lehet null is

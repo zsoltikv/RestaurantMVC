@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 // itt betoltjuk a microsoft.aspnetcore.identity nevu nevtarteruletet
 // ez a csomag felelos az autentikacioert es az autorizacioert
 // tartalmazza azokat az osztalyokat es interfeszeket,
@@ -17,6 +18,8 @@ namespace RestaurantMVC.Models
     // ilyenek: id, username, email, phonenumber, passwordhash, securitystamp stb.
     // az applicationuser osztaly kibovitesevel sajat tulajdonsagokat adhatunk a felhasznalo entitasunkhoz
     {
+
+        [ValidateNever]
         public ICollection<Order>? Orders { get; set; }
         // itt egy orders nevu tulajdonsagot hozunk letre
         // az orders egy icollection tipusu gyujtemeny, amely order tipusu objektumokat tartalmaz
