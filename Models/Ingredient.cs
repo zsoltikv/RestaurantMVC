@@ -9,7 +9,7 @@ namespace RestaurantMVC.Models
         public string Name { get; set; }
 
         [ValidateNever]
-        public ICollection<Product> ProductIngredients { get; set; }
+        public ICollection<ProductIngredients> ProductIngredients { get; set; }
 
     }
 

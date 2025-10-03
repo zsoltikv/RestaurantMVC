@@ -64,5 +64,9 @@ namespace RestaurantMVC.Models
         // productingredients egy gyujtemeny, amely a termekhez tartozo hozzavalok listajat tartalmazza
         // nullable: lehet null
         // validate never: model binding ne ellenorizze
+        public Product()
+        {
+            ProductIngredients = new List<ProductIngredients>();
+        }
     }
 }
